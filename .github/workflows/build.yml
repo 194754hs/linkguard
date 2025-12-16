@@ -19,11 +19,7 @@ jobs:
         with:
           python-version: '3.9'
       - name: Extract package
-        run: |
-          python - <<'PY'
-          import zipfile
-          zipfile.ZipFile('linkguard-mvp.zip').extractall()
-          PY
+        run: python -m zipfile -e linkguard-mvp.zip .
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
