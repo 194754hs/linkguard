@@ -2,8 +2,6 @@ name: Build and Release
 permissions:
   contents: write
 
-
-
 on:
   push:
     tags:
@@ -31,7 +29,7 @@ jobs:
           pip install pyinstaller
       - name: Build executable
         run: |
-          pyinstaller --onefile linkguard-mvp/src/linkguard/cli.py --name linkguard
+          pyinstaller --onefile linkguard-mvp/src/linkguard/cliclipy --name linkguard-${{ matrix.os }}
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
