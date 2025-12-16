@@ -28,8 +28,7 @@ jobs:
           pip install -r linkguard-mvp/requirements.txt
           pip install pyinstaller
       - name: Build executable
-        run: |
-           -   pyinstaller --onefile linkguard-mvp/src/linkguard/cli.py --name linkguard-${{ matrix.os }}
+     run: pyinstaller --onefile linkguard-mvp/src/linkguard/cli.py --name linkguard-${{ matrix.os }}}
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
