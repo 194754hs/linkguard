@@ -1,25 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>LinkGuard</title>
-  <style>
-    body {font-family: sans-serif; margin:40px;}
-    h1 {color:#333;}
-    p {max-width:600px;}
-    .download {margin-top:20px;}
-    .download a {background:#007bff; color:#fff; padding:10px 20px; border-radius:4px; text-decoration:none;}
-    .download a:hover {background:#0056b3;}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkGuard | Protect your video projects</title>
+    <style>
+        :root {
+            --primary: #007BFF;
+            --primary-hover: #0056b3;
+            --bg: #f9f9f9;
+            --text: #333;
+        }
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        header {
+            padding: 1.5rem 0;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        p {
+            margin-bottom: 1rem;
+        }
+        .download-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2rem 0;
+            gap: 0.5rem;
+        }
+        .download-buttons a {
+            display: inline-block;
+            padding: 0.75rem 1.25rem;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+        .download-buttons a:hover {
+            background-color: var(--primary-hover);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+        h2 {
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+    </style>
 </head>
 <body>
-  <h1>LinkGuard</h1>
-  <p>LinkGuard is a tool that monitors file movements and helps recover moved, renamed or deleted files in video editing projects. It provides a timeline of changes and assists with relinking files.</p>
-  <p>The software is currently in its MVP stage and packaged as a ZIP file. You can download it below.</p>
-  <div class="download">
-    <a href="linkguard-mvp.zip">Download LinkGuard (MVP)</a>
-  </div>
-  <p>After downloading, please refer to the README in the repository for setup instructions.</p>
+    <header>
+        <h1>LinkGuard</h1>
+    </header>
+    <main>
+        <p lang="en">LinkGuard tracks file changes to help recover moved, renamed or deleted assets in your creative projects. Protect your videos from broken links and lost files.</p>
+        <p lang="ja">LinkGuardは、ファイルの移動・名前変更・削除を追跡し、映像制作プロジェクトのリンク切れやファイル紛失から守るツールです。</p>
+        <div class="download-buttons">
+            <!-- Source code zip always available -->
+            <a href="linkguard-mvp.zip" download>Download Source (ZIP)</a>
+            <!-- Windows and macOS builds will be available after releases -->
+            <a href="https://github.com/194754hs/linkguard/releases/latest/download/linkguard-windows.zip">Download for Windows</a>
+            <a href="https://github.com/194754hs/linkguard/releases/latest/download/linkguard-macos.zip">Download for macOS</a>
+        </div>
+        <h2>Features / 機能</h2>
+        <ul>
+            <li lang="en">Monitors folders and logs file operations (delete, move, rename, update)</li>
+            <li lang="ja">フォルダを監視し、削除・移動・名前変更・更新を記録します</li>
+            <li lang="en">Tracks files by their fingerprints to locate them even after they move</li>
+            <li lang="ja">ファイル指紋で追跡し、移動後でも見つけられます</li>
+            <li lang="en">Recreates old paths using symlinks/junctions to restore project links</li>
+            <li lang="ja">シンボリックリンクやジャンクションを使って旧パスを再現し、リンクを復元します</li>
+        </ul>
+    </main>
 </body>
 </html>
